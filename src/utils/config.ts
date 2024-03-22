@@ -6,6 +6,7 @@ import type { MetaData } from '~/types';
 
 export interface SiteConfig {
   name: string;
+  logo: string;
   site?: string;
   base?: string;
   trailingSlash?: boolean;
@@ -81,10 +82,12 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
 };
 
 const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_LOGO = '~/assets/images/logo.png';
 
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
+    logo: DEFAULT_SITE_LOGO,
     site: undefined,
     base: '/',
     trailingSlash: false,
