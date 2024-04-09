@@ -236,6 +236,7 @@
 .home .content__text-block {
     background: #f6f6f7;
 }
+
 .site__form {
     background: #d5e8ee;
     margin-top: 43px;
@@ -272,6 +273,9 @@
     .hero__layout {
         background-image: url('/wp-content/uploads/2016/08/hero_header_bg_small_1.png');
     }
+    .hero {
+        background: linear-gradient(to bottom, #003366, #0066cc);
+      }
     .site__header-top {
         height: 90px;
     }
@@ -497,9 +501,6 @@
 }
 .header-menu__wrap .menu > .current-menu-item > a {
     color: #01b4eb;
-}
-.hero {
-    background-color: #f6f6f7;
 }
 .page-template-default .hero__layout {
     padding-top: 219px;
