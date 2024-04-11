@@ -49,7 +49,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: 'Events',
       links: [
         {
           text: 'Blog List',
