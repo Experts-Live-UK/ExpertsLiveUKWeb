@@ -48,6 +48,8 @@ export const headerData = {
         },
       ],
     },
+
+    /*
     {
       text: 'Events',
       links: [
@@ -64,7 +66,7 @@ export const headerData = {
           href: getPermalink('astro', 'tag'),
         },
       ],
-    },
+    },*/
   ],
   actions: [],
 };
