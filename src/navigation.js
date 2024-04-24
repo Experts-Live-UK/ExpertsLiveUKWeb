@@ -3,40 +3,53 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Speaker',
+      text: 'User Group',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'About the user group',
+          href: getPermalink('/usergroup'),
+        },
+        {
+          text: 'Planned events',
+          href: getPermalink('/usergroup/#planned'),
+        },
+        {
+          text: 'Previous events',
+          href: getPermalink('/usergroup/#previous'),
+        },
+        {
+          text: 'Call for Speakers',
+          href: getPermalink('/usergroupspeakers'),
         },
       ],
     },
     {
-      text: 'Agenda',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-      ],
+      text: 'Conference',
+      href: getPermalink('/conference'),
     },
     {
       text: 'Sponsors',
+      href: getPermalink('/sponsors'),
+    },
+    {
+      text: 'More',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'About us',
+          href: getPermalink('/about'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          text: 'Contact',
+          href: getPermalink('/contact'),
+        },
+        {
+          text: 'Privacy policy',
+          href: getPermalink('/privacy'),
         },
       ],
     },
+
+    /*
     {
       text: 'Events',
       links: [
@@ -45,13 +58,17 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'Categories',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Tags',
+          href: getPermalink('astro', 'tag'),
         },
       ],
-    },
+    },*/
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [],
 };
 
 export const footerData = {

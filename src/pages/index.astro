@@ -17,48 +17,46 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-<Hero
-  title="Microsoft IT Conference<br>Experts Live UK"
-  actions={[
-    {
-      variant: 'primary',
-      text: 'Register for more info',
-      href: 'https://www.expertslive.co.uk',
-      target: '_blank',
-      icon: 'tabler:download',
-    },
-    { text: 'Learn more', href: '#features' },
-  ]}
-  image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
->
-  <Fragment slot="subtitle">
-    <span class="hidden sm:inline">
-      <span class="font-semibold">In person</span> user groups and working towards a huge UK conference.</span>
-      Suitable for new learners, established consultants and anyone wanting to learn more.
-  </Fragment>
-</Hero>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register for more info',
+        href: 'https://www.expertslive.co.uk',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Learn from the experts
+      <span class="text-accent dark:text-white highlight"> across cloud, data & AI, datacenter, security, and modern workplace</span>
+    </Fragment>
 
- 
-<!-- Features Widget *************** -->
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">In person</span> user groups and working towards a huge UK conference.</span>
+        Suitable for new learners, established consultants and anyone wanting to learn more.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    title="Why Attend?"
+    title="What is Experts Live UK?"
     items={[
       {
-        title: 'Learn',
-        description: 'From the experts across modern work, platform, security and more.',
-
+        title: 'User Group',
+        description: 'Quarterly user group based in London with each evening themed on a particularly topic, bringing speakers from across Microsoft and the wider community to talk on topics across the Microsoft stack.',
       },
       {
-        title: 'Network',
-        description: 'With peers and Microsoft staff.',
+        title: 'Conference',
+        description: 'UK based conference focused on all Microsoft Technologies and bringing global talent to share the latest news and deep insights.',
 
-      },
-      {
-        title: 'Experience',
-        description: 'The latest Microsoft technologies.',
-      },
+      }
     ]}
   />
 
@@ -72,8 +70,8 @@ const metadata = {
   <!-- Call to Action Widget ******************* -->
 
   <CallToAction
-    title="Ready to join us?"
-    subtitle="Register now to secure your spot at Experts Live UK."
+    title="Want to learn more?"
+    subtitle="Sign up for our mailing list to hear the latest information."
     actions={[
       {
         variant: 'primary',

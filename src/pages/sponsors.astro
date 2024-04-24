@@ -1,0 +1,30 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About our sponsors',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About our sponsors"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">
+      Bringing you the best tools and services around Microsoft technology to the UK <br />
+      <span class="text-accent dark:text-white highlight">for you to learn more and make these events happen.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We can safely say that these events would not happen without these amazing companies and we love what they bring to the Microsoft ecosystem. Check them out and find out how you can get involved.
+    </Fragment>
+  </Hero>
+
+</Layout>

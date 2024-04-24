@@ -26,6 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   site: SITE.site,
+  logo: SITE.logo,
   base: SITE.base,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
