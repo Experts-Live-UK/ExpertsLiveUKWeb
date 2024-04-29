@@ -3,22 +3,48 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
+import ELMapLogo from '~/assets/images/expertslivemap.jpg';
+import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
+import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
+import { Image } from 'astro:assets';
 
 const metadata = {
   title: 'Experts Live UK',
   ignoreTitleTemplate: true,
 };
 ---
-<Layout {...metadata}>
-  <Hero
-    title="Experts Live UK Coming Soon in 2025"
-    subtitle="UK's largest community conference on Microsoft technologies"
-    image={{ src: '/images/expertslivemap.jpg', alt: 'Conference Image', width: '700px', height: '300px' }}
-  />
-  <!-- Features Widget *************** -->
 
-  
-    <!-- Features Widget *************** -->
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+   title="Experts Live UK - Community conference on Microsoft technologies"
+    subtitle="Join us on 20th June 2024, London UK"
+    image={{ src: ELMapLogo, alt: 'Conference Image', width: '700px', height: '300px' }}
+     actions={[
+      {
+        variant: 'primary',
+        text: 'Register for next User Group',
+        href: 'https://e.runevents.net/user-group-june-2024/checkout',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
+    ]}
+  >
+    <Fragment slot="title">
+      Learn from the experts
+      <span class="text-accent dark:text-white highlight"> across cloud, data & AI, datacenter, security, and modern workplace</span>
+      <p class="font-bold">Date: 20th June 2024</p>
+      <p class="font-bold">Location: London, UK</p>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">In person</span> user groups and working towards a huge UK conference.</span>
+        Suitable for new learners, established consultants and anyone wanting to learn more.
+    </Fragment>
+  </Hero>
     <Features
     id="features"
     title="About Experts Live UK?"
@@ -53,8 +79,32 @@ const metadata = {
     ]}
   />
 
-  <Content
-    title="Sponsors "
-    content="Interested in sponsoring the event? Get in touch with us at"
-  />
-</Layout>
+
+  <Content title="Sponsors">
+    <Fragment slot="content">
+      <div class="flex justify-center items-center"> <!-- Add items-center -->
+        <div class="flex justify-center flex-col items-center mr-8">
+          <Image
+            src={AdvaniaLogo}
+            alt="Sponsor - Advania"
+            class="mx-auto w-50 h-50"
+          />
+          <p class="mt-4 text-center">Advania</p>
+        </div>
+        <div class="flex justify-center flex-col items-center mr-8">
+          <Image
+            src={PerformantaLogo}
+            alt="Sponsor - Advania"
+            class="mx-auto w-50 h-50"
+          />
+          <p class="mt-4 text-center">Performanta</p>
+        </div>
+        <div class="flex justify-center flex-col items-center">
+          <div class="border-2 border-gray-300 w-50 h-50 mx-auto flex items-center justify-center">
+            <p>This could be you!</p>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+  </Layout>
