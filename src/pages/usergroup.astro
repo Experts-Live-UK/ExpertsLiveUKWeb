@@ -17,11 +17,23 @@ const metadata = {
     image={{
       src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: 'Caos Image',
-    }}
+    }},
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register for next User Group',
+        href: 'https://e.runevents.net/user-group-june-2024/checkout',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
+    ]}
   >
     <Fragment slot="title">
-      Bringing the best experts in Microsoft technology to London with <br />
-      <span class="text-accent dark:text-white highlight"> quarterly user group events</span>
+      <span class="text-accent dark:text-white highlight"> Next event: </span>
+      June 20th 2024 at Advania UK office (85 London Wall, London) <br /><br />
+      <span class="text-accent dark:text-white highlight"> Speakers: </span>
+      Amy Boyd talking on Responsible AI and Steve Goodman on AI in the Modern Workplace
     </Fragment>
 
     <Fragment slot="subtitle">
