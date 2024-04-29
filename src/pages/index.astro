@@ -1,9 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
+import ELMapLogo from '~/assets/images/expertslivemap.jpg';
+import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
+import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
+import { Image } from 'astro:assets';
 
 const metadata = {
   title: 'Experts Live UK',
@@ -17,7 +20,7 @@ const metadata = {
   <Hero
    title="Experts Live UK - Community conference on Microsoft technologies"
     subtitle="Join us on 20th June 2024, London UK"
-    image={{ src: '/images/expertslivemap.jpg', alt: 'Conference Image', width: '700px', height: '300px' }}
+    image={{ src: ELMapLogo, alt: 'Conference Image', width: '700px', height: '300px' }}
      actions={[
       {
         variant: 'primary',
@@ -81,11 +84,19 @@ const metadata = {
     <Fragment slot="content">
       <div class="flex justify-center items-center"> <!-- Add items-center -->
         <div class="flex justify-center flex-col items-center mr-8">
-          <img src="/images/advania_uk_logo.jpg" alt="Sponsor 1" class="mx-auto w-50 h-50" />
+          <Image
+            src={AdvaniaLogo}
+            alt="Sponsor - Advania"
+            class="mx-auto w-50 h-50"
+          />
           <p class="mt-4 text-center">Advania</p>
         </div>
         <div class="flex justify-center flex-col items-center mr-8">
-          <img src="/images/performanta_logo.jpg" alt="Performanta" class="mx-auto w-50 h-50" />
+          <Image
+            src={PerformantaLogo}
+            alt="Sponsor - Advania"
+            class="mx-auto w-50 h-50"
+          />
           <p class="mt-4 text-center">Performanta</p>
         </div>
         <div class="flex justify-center flex-col items-center">
