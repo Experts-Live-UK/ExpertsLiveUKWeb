@@ -9,18 +9,14 @@ export const headerData = {
           text: 'About the user group',
           href: getPermalink('/usergroup'),
         },
-        {
-          text: 'Planned events',
-          href: getPermalink('/usergroup/#planned'),
-        },
-        {
-          text: 'Previous events',
-          href: getPermalink('/usergroup/#previous'),
-        },
-        {
-          text: 'Call for Speakers',
-          href: getPermalink('/usergroupspeakers'),
-        },
+        // {
+        //   text: 'Planned events',
+        //   href: getPermalink('/usergroup/#planned'),
+        // },
+        // {
+        //   text: 'Previous events',
+        //   href: getPermalink('/usergroup/#previous'),
+        // },
       ],
     },
     {

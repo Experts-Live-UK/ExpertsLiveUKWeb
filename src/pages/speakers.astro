@@ -1,0 +1,17 @@
+---
+import Card from '../components/card.astro';
+---
+
+<astro>
+  <h1 class="speakers-heading">Speakers For First Event</h1>
+  {Astro.props.speakers.map(speaker => (
+    <Card name={speaker.name} image={speaker.image} />
+  ))}
+</astro>
+
+<style>
+.speakers-heading {
+  text-align: center;
+  font-size: 4em; /* Adjust as needed */
+}
+</style>
