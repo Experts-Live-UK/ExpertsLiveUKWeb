@@ -8,6 +8,8 @@ import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
 import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
 
+import Speakers from './speakers.astro';
+
 const metadata = {
   title: 'Experts Live UK',
   ignoreTitleTemplate: true,
@@ -18,16 +20,15 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-   title="Experts Live UK - Community conference on Microsoft technologies"
+   title="ExpertsLiveUK - Community Events around Microsoft technologies"
     subtitle="Join us on 20th June 2024, London UK"
     image={{ src: ELMapLogo, alt: 'Conference Image', width: '700px', height: '300px' }}
      actions={[
       {
         variant: 'primary',
-        text: 'Register for next User Group',
+        text: 'Register here',
         href: 'https://e.runevents.net/user-group-june-2024/checkout',
         target: '_blank',
-        icon: 'tabler:download',
       },
       { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
     ]}
@@ -45,21 +46,19 @@ const metadata = {
         Suitable for new learners, established consultants and anyone wanting to learn more.
     </Fragment>
   </Hero>
-    <Features
-    id="features"
-    title="About Experts Live UK?"
-    items={[
-      {
-        title: 'User Group',
-        description: 'A quarterly user group based in London, each meeting is themed around a specific topic. It\'s an excellent preparation for our upcoming conference next year, providing continuous learning and networking opportunities.',
-      },
-      {
-        title: 'Conference',
-        description: 'A UK-based conference that covers the entire spectrum of Microsoft Technologies. We bring together global talent to share the latest updates and knowledge. It\'s a unique opportunity to learn, network, and get inspired.',
-        opportunity: ''
-      }
-    ]}
-  />
+  <h1></h1>
+  <Speakers speakers={[
+    {
+      name: 'Amy Boyd@Microsoft',
+      topic: 'Responsible AI',
+      image: 'src/assets/images/amyboyd.jpg'
+    },
+    {
+      name: 'Steve Goodman@Advania',
+      topic: 'AI in the Modern Workplace',
+      image: 'src/assets/images/stevegoodman.jpg'
+    }
+  ]} />
 
   <Features
     title="Why Attend?"
@@ -70,11 +69,11 @@ const metadata = {
       },
       {
         title: 'Network',
-        description: 'With peers and Microsoft staff.',
+        description: 'Meet like-minded professionals and share knowledge.',
       },
       {
         title: 'Experience',
-        description: 'The latest Microsoft technologies.',
+        description: 'Gain insights into the latest technologies and trends.'
       },
     ]}
   />
