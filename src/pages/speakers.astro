@@ -4,14 +4,18 @@ import Card from '../components/card.astro';
 
 <astro>
   <h1 class="speakers-heading">Speakers For First Event</h1>
-  {Astro.props.speakers.map(speaker => (
-    <Card name={speaker.name} image={speaker.image} />
+  {Astro.props.speakers && Astro.props.speakers.map(speaker => (
+  <Card image={speaker.image} name={speaker.name} topic={speaker.topic} />
   ))}
 </astro>
 
 <style>
-.speakers-heading {
-  text-align: center;
-  font-size: 4em; /* Adjust as needed */
-}
-</style>
+  .speakers-heading {
+    text-align: center;
+    font-size: 3em; /* Adjust as needed */
+  }
+  
+  p {
+    color: red;
+  }
+  </style>
