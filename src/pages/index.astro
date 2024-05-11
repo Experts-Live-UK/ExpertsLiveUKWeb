@@ -7,6 +7,7 @@ import ELMapLogo from '~/assets/images/expertslivemap.jpg';
 import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
 import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import Speakers from './speakers.astro';
 
@@ -20,8 +21,8 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-   title="ExpertsLiveUK - Community Events around Microsoft technologies"
-    subtitle="Join us on 20th June 2024, London UK"
+   title="Experts Live UK - Community Events around Microsoft technologies"
+    subtitle="Join us for our first User Group on 20th June 2024, London UK"
     image={{ src: ELMapLogo, alt: 'Conference Image', width: '700px', height: '300px' }}
      actions={[
       {
@@ -30,22 +31,24 @@ const metadata = {
         href: 'https://e.runevents.net/user-group-june-2024/checkout',
         target: '_blank',
       },
-      { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
+      { text: 'Learn more', href: '/usergroup' },
     ]}
   >
-    <Fragment slot="title">
-      Learn from the experts
-      <span class="text-accent dark:text-white highlight"> across cloud, data & AI, datacenter, security, and modern workplace</span>
-      <p class="font-bold">Date: 20th June 2024</p>
-      <p class="font-bold">Location: London, UK</p>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">In person</span> user groups and working towards a huge UK conference.</span>
-        Suitable for new learners, established consultants and anyone wanting to learn more.
-    </Fragment>
   </Hero>
+  
+  <CallToAction
+    title="About Experts Live UK"
+    subtitle="Experts Live UK is a non-profit organization based in the United Kingdom that has a mission to “enable sharing of knowledge and experience about Microsoft technologies worldwide”. Inspired by Experts Live events globally, we are focusing on Microsoft ecosystem to increase the diversity in the Community. We are bringing speakers from different areas such as AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid and many others."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'About Us',
+        href: '/about',
+        icon: 'tabler:arrow-big-right-filled',
+      },
+    ]}
+  />
+
   <h1></h1>
   <Speakers class="speaker-circle" speakers={[
     {

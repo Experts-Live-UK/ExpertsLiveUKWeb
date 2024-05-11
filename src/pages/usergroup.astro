@@ -3,17 +3,15 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Prices from '~/components/widgets/Pricing.astro';
 
 const metadata = {
   title: 'About the user group',
 };
 ---
-
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="About the user group"
+    tagline="Experts Live UK user group"
     actions={[
       {
         variant: 'primary',
@@ -21,22 +19,63 @@ const metadata = {
         href: 'https://e.runevents.net/user-group-june-2024/checkout',
         target: '_blank',
         icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
+      }
     ]}
   >
     <Fragment slot="title">
       <span class="text-accent dark:text-white highlight"> First event: </span>
-      June 20th 2024 at Advania UK office (85 London Wall, London) <br /><br />
-      <span class="text-accent dark:text-white highlight"> Speakers: </span>
-      Amy Boyd talking on Responsible AI and Steve Goodman on AI in the Modern Workplace
+      June 20th 2024 at Advania UK office (85 London Wall, London)
     </Fragment>
 
     <Fragment slot="subtitle">
-      Welcome to Experts Live UK User Group – the premier London based user group where the brightest minds in the Microsoft technology sphere converge. Our quarterly gathering is a melting pot of innovation, learning, and collaboration, designed to empower IT professionals, tech enthusiasts, and business leaders alike.
+      Starting with our first User Group in London on the 20th of June 2024, we look forward to welcoming the UK Microsoft Community for our first event. This event will be dedicated on the wonders and responsibilities of AI tools. Our speakers will be Amy Boyd from Microsoft and Steve Goodman from Advania UK. 
     </Fragment>
   </Hero>
+<!--
+ <br /><br />
+      <span class="text-accent dark:text-white highlight"> Speakers: </span>
+      Amy Boyd talking on Responsible AI and Steve Goodman on AI in the Modern Workplace
 
+ -->
+  <Prices
+    title="Speakers"
+    subtitle="Our speakers for the next event"
+    prices={[
+      {
+        title: 'Experts Live UK Organisers',
+        subtitle: 'Experts Live UK',
+        price: 'Intro',
+        period: '19:00',
+        items: [
+          {
+            description: 'Etiam in libero, et volutpat',
+          }
+        ],
+      },
+      {
+        title: 'Amy Boyd',
+        subtitle: 'Microsoft',
+        price: 'Responsible AI',
+        period: '19:20',
+        items: [
+          {
+            description: 'Etiam in libero, et volutpat',
+          }
+        ],
+      },
+      {
+        title: 'Steve Goodman',
+        subtitle: 'Advania',
+        price: 'AI in the Modern Workplace',
+        period: '20:20',
+        items: [
+          {
+            description: 'Etiam in libero, et volutpat',
+          }
+        ],
+      },
+    ]}
+  />
   <Steps2
     title="Our values"
     subtitle="What we hope to achieve."
