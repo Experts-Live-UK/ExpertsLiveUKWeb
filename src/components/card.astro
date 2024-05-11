@@ -1,0 +1,33 @@
+<astro>
+  <div class="card">
+    <img class="card-image speaker-image" src={Astro.props.image} alt={Astro.props.name} />
+    <h3 class="speaker-name">{Astro.props.name}</h3>
+    <p>{Astro.props.topic}</p>
+  </div>
+</astro>
+
+<style>
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.card-image {
+  display: block;
+  margin: auto;
+}
+
+.speaker-image {
+  border-radius: 50%;
+  width: 250px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
+  object-fit: cover; /* This will ensure the image covers the entire area of the container */
+}
+
+.speaker-name {
+  font-size: 2em; /* Adjust as needed */
+}
+</style>
