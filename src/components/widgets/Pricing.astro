@@ -26,7 +26,7 @@ const {
         prices &&
           prices.map(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
             <div class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
-              {price && period && (
+              {price &&  (
                 <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 flex w-full max-w-sm flex-col justify-between text-center">
                   {hasRibbon && ribbonTitle && (
                     <div class="absolute right-[-5px] 2xl:right-[-8px] rtl:right-auto rtl:left-[-8px] rtl:2xl:left-[-10px] top-[-5px] 2xl:top-[-10px] z-[1] h-[100px] w-[100px] overflow-hidden text-right">
@@ -42,7 +42,6 @@ const {
                     {subtitle && <p class="font-light sm:text-lg text-gray-600 dark:text-slate-400">{subtitle}</p>}
                     <div class="my-8">
                       <div class="flex items-center justify-center text-center mb-1">
-                        <span class="text-5xl">$</span>
                         <span class="text-6xl font-extrabold">{price}</span>
                       </div>
                       <span class="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">{period}</span>
@@ -50,12 +49,9 @@ const {
                     {items && (
                       <ul role="list" class="my-8 md:my-10 space-y-2 text-left">
                         {items.map(
-                          ({ description, icon }) =>
+                          ({ description}) =>
                             description && (
                               <li class="mb-1.5 flex items-start space-x-3 leading-7">
-                                <div class="rounded-full bg-primary mt-1">
-                                  <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5 font-bold p-1 text-white" />
-                                </div>
                                 <span>{description}</span>
                               </li>
                             )
