@@ -1,7 +1,21 @@
+---
+import Image from '~/components/common/Image.astro';
+---
 <astro>
   <div class="card">
-    <img class="card-image speaker-image" src={Astro.props.image} alt={Astro.props.name} />
+    <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+      <Image
+        class="mx-auto w-full rounded-full border border-slate-200 dark:border-slate-600"
+        widths={[400, 768, 1024, 2040]}
+        sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+        loading="eager"
+        width={250}
+        height={250}
+        alt="Speaker"
+        src={Astro.props.image}
+      />
     <h3 class="speaker-name">{Astro.props.name}</h3>
+    <br/>
     <p>{Astro.props.topic}</p>
   </div>
 </astro>
