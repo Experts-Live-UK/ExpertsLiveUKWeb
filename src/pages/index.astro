@@ -5,15 +5,19 @@ import NavigationBar from '~/components/widgets/NavigationBar.astro';
 import Content from '~/components/widgets/Content.astro';
 import FeaturesWithImage from '~/components/widgets/FeaturesWithImage.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import ELMapLogo from '~/assets/images/expertslivemap.jpg';
+import ELMapLogo from '~/assets/images/expertslivemap.webp';
 import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
+import SteveGoodman from '~/assets/images/stevegoodman.jpg';
+import AmyBoyd from '~/assets/images/amyboyd.jpg';
 import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
-import conferenceImage from '~/assets/images/conference.webp';
+import conferenceImage from '~/assets/images/team-members.png';
 import userGroupImage from '~/assets/images/user-group.webp';
 import expertsLive from '~/assets/images/experts-live.webp';
 import Headline from '~/components/blog/Headline.astro';
-import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Speakers from '~/components/widgets/Speakers.astro';
+import SiteLogo from '~/assets/images/video-poster.webp';
 
 const metadata = {
   title: 'Experts Live UK',
@@ -23,19 +27,18 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <HeroFullImage
-    title="Experts Live UK - Community conference on "
+    title="Experts Live UK community event on "
     accent="Microsoft technologies"
     subtitle="Join us on 20th June 2024, London UK"
     image={{ src: ELMapLogo.src, alt: 'Conference Image', width: '700px', height: '300px' }}
     actions={[
       {
         variant: 'primary',
-        text: 'Register for next User Group',
+        text: 'Register here',
         href: 'https://e.runevents.net/user-group-june-2024/checkout',
         target: '_blank',
-        icon: 'tabler:download',
       },
-      { text: 'Learn more', href: 'https://e.runevents.net/user-group-june-2024' },
+      { text: 'Learn more', href: '/usergroup' },
     ]}
   >
     <Fragment slot="title">
@@ -47,21 +50,54 @@ const metadata = {
     </Fragment>
   </HeroFullImage>
   <NavigationBar />
-  <FeaturesWithImage
+  <CallToAction
     id="about"
-    title="About Experts Live UK?"
+    title="About Experts Live UK"
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    ,
+    subtitle="Experts Live UK is a non-profit organization based in the United Kingdom that has a mission to “enable sharing of knowledge and experience about Microsoft technologies worldwide”. Inspired by Experts Live events globally, we are focusing on Microsoft ecosystem to increase the diversity in the Community. We are bringing speakers from different areas such as AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid and many others."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'About Us',
+        href: '/about',
+        icon: 'tabler:arrow-big-right-filled',
+      },
+    ]}
+  />
+  <FeaturesWithImage
     items={[
       {
         title: 'User Group',
         description:
           "A quarterly user group based in London, each meeting is themed around a specific topic. It's an excellent preparation for our upcoming conference next year, providing continuous learning and networking opportunities.",
-        image: { src: userGroupImage, alt: 'User Group Image', width: '408px', height: '158px' },
+        image: { src: userGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
       },
       {
         title: 'Conference',
         description:
           "A UK-based conference that covers the entire spectrum of Microsoft Technologies. We bring together global talent to share the latest updates and knowledge. It's a unique opportunity to learn, network, and get inspired.",
-        image: { src: conferenceImage, alt: 'Conference Image', width: '408px', height: '158px' },
+        image: { src: conferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
+      },
+    ]}
+  />
+  <Speakers
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    id="speakers"
+    speakers={[
+      {
+        name: 'Amy Boyd@Microsoft',
+        topic: 'Responsible AI',
+        image: AmyBoyd,
+      },
+      {
+        name: 'Steve Goodman@Advania',
+        topic: 'AI in the Modern Workplace',
+        image: SteveGoodman,
       },
     ]}
   />
@@ -75,8 +111,8 @@ const metadata = {
       }}
     />
     <Fragment slot="content">
-      <div class="max-w-xl mx-auto">
-        <YoutubeVideo videoId="dfXS3ATpgPU" />
+      <div class="max-w-xl mx-auto hover:cursor-pointer">
+        <video width="768" height="480" poster={SiteLogo.src} controls src="/welcome-video.mp4"> </video>
       </div>
     </Fragment>
   </div>
@@ -105,7 +141,7 @@ const metadata = {
       },
     ]}
   />
-  <div class="bg-blue-200 dark:bg-slate-900 py-10">
+  <div id="sponsors" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-14">
     <Headline
       title="Meet Our Sponsors"
       classes={{

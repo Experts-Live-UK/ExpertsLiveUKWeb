@@ -1,0 +1,47 @@
+---
+import Image from '~/components/common/Image.astro';
+---
+<astro>
+  <div class="card">
+    <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+      <Image
+        class="mx-auto w-full rounded-full border border-slate-200 dark:border-slate-600"
+        widths={[400, 768, 1024, 2040]}
+        sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+        loading="eager"
+        width={250}
+        height={250}
+        alt="Speaker"
+        src={Astro.props.image}
+      />
+    <h3 class="speaker-name">{Astro.props.name}</h3>
+    <br/>
+    <p>{Astro.props.topic}</p>
+  </div>
+</astro>
+
+<style>
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.card-image {
+  display: block;
+  margin: auto;
+}
+
+.speaker-image {
+  border-radius: 50%;
+  width: 250px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
+  object-fit: cover; /* This will ensure the image covers the entire area of the container */
+}
+
+.speaker-name {
+  font-size: 2em; /* Adjust as needed */
+}
+</style>
