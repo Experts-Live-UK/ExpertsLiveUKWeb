@@ -4,14 +4,26 @@ import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Prices from '~/components/widgets/Pricing.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import user from '~/assets/images/user.webp';
+import SteveGoodman from '~/assets/images/stevegoodman.jpg';
+import AmyBoyd from '~/assets/images/amyboyd.jpg';
+import logo from '~/assets/images/SquareLogo.png';
+import experts from '~/assets/images/experts.webp';
+import Speakers from '~/components/widgets/Speakers.astro';
+import { Image } from 'astro:assets';
 
 const metadata = {
   title: 'About the user group',
 };
 ---
+
 <Layout metadata={metadata}>
-  <Hero
+  <Hero2
     tagline="Experts Live UK user group"
+    title="First Event"
+    subtitle="June 20th 2024 at Advania UK office (85 London Wall, London)"
     actions={[
       {
         variant: 'primary',
@@ -19,53 +31,71 @@ const metadata = {
         href: 'https://e.runevents.net/user-group-june-2024/checkout',
         target: '_blank',
         icon: 'tabler:download',
-      }
+      },
     ]}
-  >
-    <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight"> First event: </span>
-      June 20th 2024 at Advania UK office (85 London Wall, London)
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Starting with our first User Group in London on the 20th of June 2024, we look forward to welcoming the UK Microsoft Community for our first event. This event will be dedicated on the wonders and responsibilities of AI tools. Our speakers will be Amy Boyd from Microsoft and Steve Goodman from Advania UK. 
-    </Fragment>
-  </Hero>
-  <Prices
-    title="Speakers"
-    subtitle="Our speakers for the next event"
-    prices={[
+    image={{
+      src: user,
+      alt: 'Children telling a story. Long-form Sales Landing Page demo',
+    }}
+  />
+  <div class="bg-blue-200 dark:bg-slate-900 my-10">
+    <CallToAction
+      title="Experts Live UK user group"
+      subtitle="Starting with our first User Group in London on the 20th of June 2024, we look forward to welcoming the UK Microsoft Community for our first event. This event will be dedicated on the wonders and responsibilities of AI tools. Our speakers will be Amy Boyd from Microsoft and Steve Goodman from Advania UK."
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Register for next User Group',
+          href: 'https://e.runevents.net/user-group-june-2024/checkout',
+          target: '_blank',
+          icon: 'tabler:download',
+        },
+      ]}
+    />
+  </div>
+  <Speakers
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    id="speakers"
+    speakers={[
       {
-        title: 'Experts Live UK Organisers',
-        subtitle: 'Experts Live UK',
-        price: 'Intro',
-        period: '19:00',
+        name: 'Organisers',
+        company: 'Experts Live UK',
+        topic: 'Matters in the world of AI, especially with Copilot.',
+        image: logo,
+        time: '19:00',
         items: [
           {
-            description: 'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
-          }
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
         ],
       },
       {
-        title: 'Amy Boyd',
-        subtitle: 'Microsoft',
-        price: 'Responsible AI',
-        period: '19:20',
+        name: 'Amy Boyd',
+        company: 'Microsoft',
+        topic: 'Responsible AI',
+        image: AmyBoyd,
+        time: '19:20',
         items: [
           {
-            description: 'Details TBC',
-          }
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
         ],
       },
       {
-        title: 'Steve Goodman',
-        subtitle: 'Advania',
-        price: 'AI in the Modern Workplace',
-        period: '20:20',
+        name: 'Steve Goodman',
+        company: 'Advania',
+        topic: 'AI in the Modern Workplace',
+        image: SteveGoodman,
+        time: '20:20',
         items: [
           {
-            description: 'Details TBC',
-          }
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
         ],
       },
     ]}
@@ -86,47 +116,47 @@ const metadata = {
       },
       {
         title: 'Together',
-        description:
-          'Let’s explore the possibilities, push boundaries, and redefine what’s achievable together.',
+        description: 'Let’s explore the possibilities, push boundaries, and redefine what’s achievable together.',
       },
     ]}
-  />
-
-
-  <Features2
-    title="Scheduled events"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'June 20th',
-        description: 'AI focus',
-        callToAction:{
-          title:'Coming soon',
-          subtitle: 'We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!',
-          actions: [
-          {
-            variant: 'primary',
-            text: 'Download Template',
-            href: 'https://github.com/onwidget/astrowind',
-            icon: 'tabler:download',
+  >
+    <Image src={experts} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
+  </Steps2>
+  <div class="bg-blue-200 dark:bg-slate-900 py-10">
+    <Features2
+      title="Scheduled events"
+      tagline="Find us"
+      columns={4}
+      items={[
+        {
+          title: 'June 20th',
+          description: 'AI focus',
+          callToAction: {
+            text: 'Info coming soon',
           },
-          ]
-        }
-      },
-      {
-        title: 'September',
-        description: 'Azure Focus',
-      },
-      {
-        title: 'December',
-        description: 'Modern Work Focus',
-      },
-      {
-        title: 'March',
-        description: 'Power Platform Focus',
-      },
-    ]}
-  />
-
+        },
+        {
+          title: 'September',
+          description: 'Azure Focus',
+          callToAction: {
+            text: 'Info coming soon',
+          },
+        },
+        {
+          title: 'December',
+          description: 'Modern Work Focus',
+          callToAction: {
+            text: 'Info coming soon',
+          },
+        },
+        {
+          title: 'March',
+          description: 'Power Platform Focus',
+          callToAction: {
+            text: 'Info coming soon',
+          },
+        },
+      ]}
+    />
+  </div>
 </Layout>
