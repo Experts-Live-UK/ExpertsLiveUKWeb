@@ -1,16 +1,14 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Prices from '~/components/widgets/Pricing.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import user from '~/assets/images/user.webp';
 import SteveGoodman from '~/assets/images/stevegoodman.jpg';
 import AmyBoyd from '~/assets/images/amyboyd.jpg';
 import logo from '~/assets/images/SquareLogo.png';
-import experts from '~/assets/images/experts.webp';
+import userGroupImage from '~/assets/images/user-group.webp';
 import Speakers from '~/components/widgets/Speakers.astro';
 import { Image } from 'astro:assets';
 
@@ -34,7 +32,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: user,
+      src: userGroupImage,
       alt: 'Children telling a story. Long-form Sales Landing Page demo',
     }}
   />
@@ -60,24 +58,11 @@ const metadata = {
     id="speakers"
     speakers={[
       {
-        name: 'Organisers',
-        company: 'Experts Live UK',
-        topic: 'Matters in the world of AI, especially with Copilot.',
-        image: logo,
-        time: '19:00',
-        items: [
-          {
-            description:
-              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
-          },
-        ],
-      },
-      {
         name: 'Amy Boyd',
-        company: 'Microsoft',
+        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
         topic: 'Responsible AI',
         image: AmyBoyd,
-        time: '19:20',
+        time: 'Time: 19:20',
         items: [
           {
             description:
@@ -90,7 +75,7 @@ const metadata = {
         company: 'Advania',
         topic: 'AI in the Modern Workplace',
         image: SteveGoodman,
-        time: '20:20',
+        time: 'Time: 20:20',
         items: [
           {
             description:
@@ -120,7 +105,7 @@ const metadata = {
       },
     ]}
   >
-    <Image src={experts} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
+    <Image src={user} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
   </Steps2>
   <div class="bg-blue-200 dark:bg-slate-900 py-10">
     <Features2
