@@ -7,8 +7,8 @@ import FeaturesWithImage from '~/components/widgets/FeaturesWithImage.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import ELMapLogo from '~/assets/images/expertslivemap.webp';
 import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
-import SteveGoodman from '~/assets/images/stevegoodman.jpg';
-import AmyBoyd from '~/assets/images/amyboyd.jpg';
+import SteveGoodman from '~/assets/images/stevegoodman.webp';
+import AmyBoyd from '~/assets/images/amyboyd.webp';
 import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
 import conferenceImage from '~/assets/images/team-members.png';
@@ -90,14 +90,30 @@ const metadata = {
     id="speakers"
     speakers={[
       {
-        name: 'Amy Boyd@Microsoft',
+        name: 'Amy Boyd',
+        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
         topic: 'Responsible AI',
         image: AmyBoyd,
+        time: 'Time: 19:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
       },
       {
-        name: 'Steve Goodman@Advania',
+        name: 'Steve Goodman',
+        company: 'Advania',
         topic: 'AI in the Modern Workplace',
         image: SteveGoodman,
+        time: 'Time: 20:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
       },
     ]}
   />

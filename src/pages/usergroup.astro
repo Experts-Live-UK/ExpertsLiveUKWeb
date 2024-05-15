@@ -5,8 +5,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import user from '~/assets/images/user.webp';
-import SteveGoodman from '~/assets/images/stevegoodman.jpg';
-import AmyBoyd from '~/assets/images/amyboyd.jpg';
+import SteveGoodman from '~/assets/images/stevegoodman.webp';
+import AmyBoyd from '~/assets/images/amyboyd.webp';
 import logo from '~/assets/images/SquareLogo.png';
 import userGroupImage from '~/assets/images/user-group.webp';
 import Speakers from '~/components/widgets/Speakers.astro';
@@ -109,6 +109,7 @@ const metadata = {
   </Steps2>
   <div class="bg-blue-200 dark:bg-slate-900 py-10">
     <Features2
+      classes={{ container: 'text-center' }}
       title="Scheduled events"
       tagline="Find us"
       columns={4}
