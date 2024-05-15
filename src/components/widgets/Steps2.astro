@@ -34,7 +34,7 @@ const {
           // ...((classes?.headline as {}) ?? {}),
         }}
       />
-
+      <slot name="image" />
       <div class="w-full text-center md:text-left rtl:md:text-right">
         {
           typeof callToAction === 'string' ? (
@@ -42,9 +42,7 @@ const {
           ) : (
             callToAction &&
             callToAction.text &&
-            callToAction.href && (
-              <Button variant="primary" {...callToAction} class="mb-12 w-auto"/>
-            )
+            callToAction.href && <Button variant="primary" {...callToAction} class="mb-12 w-auto" />
           )
         }
       </div>

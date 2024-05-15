@@ -1,17 +1,23 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import HeroFullImage from '~/components/widgets/HeroFullImage.astro';
+import NavigationBar from '~/components/widgets/NavigationBar.astro';
 import Content from '~/components/widgets/Content.astro';
-import ELMapLogo from '~/assets/images/expertslivemap.jpg';
+import FeaturesWithImage from '~/components/widgets/FeaturesWithImage.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import ELMapLogo from '~/assets/images/expertslivemap.webp';
 import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
-import SteveGoodman from '~/assets/images/stevegoodman.jpg';
-import AmyBoyd from '~/assets/images/amyboyd.jpg';
+import SteveGoodman from '~/assets/images/stevegoodman.webp';
+import AmyBoyd from '~/assets/images/amyboyd.webp';
 import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
+import conferenceImage from '~/assets/images/team-members.png';
+import userGroupImage from '~/assets/images/user-group.webp';
+import expertsLive from '~/assets/images/experts-live.webp';
+import Headline from '~/components/blog/Headline.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import Speakers from './speakers.astro';
+import Speakers from '~/components/widgets/Speakers.astro';
+import SiteLogo from '~/assets/images/video-poster.webp';
 
 const metadata = {
   title: 'Experts Live UK',
@@ -20,13 +26,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-   title="Experts Live UK - Community Events around Microsoft technologies"
-    subtitle="Join us for our first User Group on 20th June 2024, London UK"
-    image={{ src: ELMapLogo, alt: 'Conference Image', width: '700px', height: '300px' }}
-     actions={[
+  <HeroFullImage
+    title="Experts Live UK community event on "
+    accent="Microsoft technologies"
+    subtitle="Join us on 20th June 2024, London UK"
+    image={{ src: ELMapLogo.src, alt: 'Conference Image', width: '700px', height: '300px' }}
+    actions={[
       {
         variant: 'primary',
         text: 'Register here',
@@ -34,11 +39,25 @@ const metadata = {
         target: '_blank',
       },
       { text: 'Learn more', href: '/usergroup' },
+      { text: 'Learn more', href: '/usergroup' },
     ]}
   >
-  </Hero>
+    <Fragment slot="title">
+      Learn from the experts across cloud, data & AI, datacenter, security, and modern workplace. In person user groups
+      and working towards a huge UK conference. Suitable for new learners, established consultants and anyone wanting to
+      learn more.
+      <p class="font-bold mt-4">Date: 20th June 2024</p>
+      <p class="font-bold">Location: London, UK</p>
+    </Fragment>
+  </HeroFullImage>
+  <NavigationBar />
   <CallToAction
+    id="about"
     title="About Experts Live UK"
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    ,
     subtitle="Experts Live UK is a non-profit organization based in the United Kingdom that has a mission to “enable sharing of knowledge and experience about Microsoft technologies worldwide”. Inspired by Experts Live events globally, we are focusing on Microsoft ecosystem to increase the diversity in the Community. We are bringing speakers from different areas such as AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid and many others."
     actions={[
       {
@@ -49,65 +68,159 @@ const metadata = {
       },
     ]}
   />
-
-  <h1></h1>
-  <Speakers class="speaker-circle" speakers={[
-    {
-      name: 'Amy Boyd@Microsoft',
-      topic: 'Responsible AI',
-      image: AmyBoyd
-    },
-    {
-      name: 'Steve Goodman@Advania',
-      topic: 'AI in the Modern Workplace',
-      image: SteveGoodman
-    }
-  ]} />
-
-  <Features
-    title="Why Attend?"
+  <FeaturesWithImage
     items={[
       {
-        title: 'Learn',
-        description: 'From the experts across modern work, platform, security and more.',
+        title: 'User Group',
+        description:
+          "A quarterly user group based in London, each meeting is themed around a specific topic. It's an excellent preparation for our upcoming conference next year, providing continuous learning and networking opportunities.",
+        image: { src: userGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
       },
       {
-        title: 'Network',
-        description: 'Meet like-minded professionals and share knowledge.',
-      },
-      {
-        title: 'Experience',
-        description: 'Gain insights into the latest technologies and trends.'
+        title: 'Conference',
+        description:
+          "A UK-based conference that covers the entire spectrum of Microsoft Technologies. We bring together global talent to share the latest updates and knowledge. It's a unique opportunity to learn, network, and get inspired.",
+        image: { src: conferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
       },
     ]}
   />
-
-
-  <Content title="Sponsors">
+  <Speakers
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    id="speakers"
+    speakers={[
+      {
+        name: 'Amy Boyd',
+        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
+        topic: 'Responsible AI',
+        image: AmyBoyd,
+        time: 'Time: 19:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
+      },
+      {
+        name: 'Steve Goodman',
+        company: 'Advania, Field Chief Technology Officer',
+        topic: 'AI in the Modern Workplace',
+        image: SteveGoodman,
+        time: 'Time: 20:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
+      },
+    ]}
+  />
+  <div id="video" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-10">
+    <Headline
+      title="Welcome Video"
+      classes={{
+        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      }}
+    />
     <Fragment slot="content">
-      <div class="flex justify-center items-center"> <!-- Add items-center -->
-        <div class="flex justify-center flex-col items-center mr-8">
-          <Image
-            src={AdvaniaLogo}
-            alt="Sponsor - Advania"
-            class="mx-auto w-50 h-50"
-          />
+      <div class="max-w-xl mx-auto hover:cursor-pointer">
+        <video width="768" height="480" poster={SiteLogo.src} controls src="/welcome-video.mp4"> </video>
+      </div>
+    </Fragment>
+  </div>
+  <Features2
+    id="why"
+    title="Why Attend?"
+    columns={3}
+    items={[
+      {
+        title: 'Learn',
+        description:
+          "Learn from the experts across modern work, platform, security, and more. Dive deep into the world of Microsoft technologies with insights and knowledge shared by industry-leading experts. Whether you're interested in AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid.",
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Network',
+        description:
+          'Network with peers and Microsoft staff to forge valuable connections, exchange ideas, and collaborate on innovative solutions. Connect with like-minded professionals who share your passion for Microsoft technologies and join a vibrant community dedicated to driving innovation and excellence',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Experience',
+        description:
+          'Experience the latest Microsoft technologies firsthand through interactive sessions, demos, and hands-on workshops. Immerse yourself in the cutting-edge tools and solutions that are shaping the future of modern work, platform development, security practices, and beyond',
+        icon: 'tabler:template',
+      },
+    ]}
+  />
+  <div id="sponsors" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-14">
+    <Headline
+      title="Meet Our Sponsors"
+      classes={{
+        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      }}
+    />
+    <Fragment slot="content">
+      <div class="flex flex-wrap justify-center items-start gap-8 lg:gap-24">
+        <!-- Add items-center -->
+        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+          <Image src={AdvaniaLogo} alt="Sponsor - Advania" class="mx-auto w-20 h-20" />
           <p class="mt-4 text-center">Advania</p>
         </div>
-        <div class="flex justify-center flex-col items-center mr-8">
-          <Image
-            src={PerformantaLogo}
-            alt="Sponsor - Advania"
-            class="mx-auto w-50 h-50"
-          />
+        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+          <Image src={PerformantaLogo} alt="Sponsor - Advania" class="mx-auto w-20 h-20" />
           <p class="mt-4 text-center">Performanta</p>
         </div>
-        <div class="flex justify-center flex-col items-center">
-          <div class="border-2 border-gray-300 w-50 h-50 mx-auto flex items-center justify-center">
+        <div
+          class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-14 text-center"
+        >
+          <div class="border-2 border-gray-800 dark:border-gray-400 w-20 h-20 mx-auto flex items-center justify-center">
             <p>This could be you!</p>
           </div>
         </div>
       </div>
     </Fragment>
+  </div>
+  <Content
+    id="what"
+    isReversed
+    tagline="sharing Microsoft technologies worldwide"
+    items={[
+      {
+        title: 'Who',
+        description:
+          'A non-profit organization based in the United Kingdom that has a mission to “enable sharing of knowledge and experience about Microsoft technologies worldwide”',
+      },
+      {
+        title: 'What',
+        description:
+          'Speakers from different areas such as AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid and many others.',
+      },
+      {
+        title: 'Inspiration',
+        description:
+          'Inspired by Experts Live events globally, we are focusing on Microsoft ecosystem to increase the diversity in the Community',
+      },
+    ]}
+    title="What is involved?"
+    image={{
+      src: expertsLive.src,
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Experts Live UK</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
   </Content>
-  </Layout>
+</Layout>
