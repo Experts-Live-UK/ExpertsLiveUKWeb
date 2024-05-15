@@ -2,7 +2,7 @@
 
 This is the source code for the ExpertsLiveUK website. It is based on Astro.
 
-![ExpertsLiveLogo](/src/assets/images/ExpertsLiveUK_logo)
+![ExpertsLiveLogo](./src/assets/images/ExpertsLiveUK_logo.jpg)
 
 ## Getting Started
 
