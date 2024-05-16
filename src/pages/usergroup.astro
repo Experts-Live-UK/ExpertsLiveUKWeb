@@ -42,39 +42,50 @@ const metadata = {
     />
   </div>
   <Speakers
-    classes={{
-      container: 'py-0 md:py-0 lg:py-0 mt-10',
-    }}
-    id="speakers"
-    speakers={[
-      {
-        name: 'Amy Boyd',
-        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
-        topic: 'Responsible AI',
-        image: AmyBoyd,
-        time: 'Time: 19:20',
-        items: [
-          {
-            description:
-              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+  classes={{
+    container: 'py-0 md:py-0 lg:py-0 mt-10',
+  }}
+  id="speakers"
+  speakers={[
+    {
+      name: 'Amy Boyd',
+      company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
+      topic: 'Responsible AI',
+      image: AmyBoyd,
+      items: [
+        {
+          description:
+            'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+        },
+      ],
+    },
+    {
+      name: 'Steve Goodman',
+      company: 'Advania',
+      topic: 'AI in the Modern Workplace',
+      image: SteveGoodman,
+      items: [
+        {
+          description:
+            'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
           },
-        ],
-      },
-      {
-        name: 'Steve Goodman',
-        company: 'Advania',
-        topic: 'AI in the Modern Workplace',
-        image: SteveGoodman,
-        time: 'Time: 20:20',
-        items: [
-          {
-            description:
-              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
-          },
-        ],
-      },
-    ]}
-  />
+      ],
+    },
+  ]}
+/>
+
+<div class="session text-center font-bold text-lg">
+  <h2 class="session-title text-3xl">Agenda</h2>
+  <ul class="session-speaker">
+    <li><strong>18:00</strong> Welcome from Experts Live UK Team</li>
+    <li><strong>18:30</strong> Amy will be talking about Responsible AI</li>
+    <li><strong>19:00</strong> Food and drinks </li>
+    <li><strong>19:20</strong> Steve will be talking about AI in the Modern Workplace</li>
+    <li><strong>20:00</strong> Networking</li>
+  </ul>
+</div>
+
+
   <Steps2
     title="Our values"
     subtitle="What we hope to achieve."
