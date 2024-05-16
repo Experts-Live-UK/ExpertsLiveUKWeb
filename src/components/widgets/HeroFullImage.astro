@@ -1,0 +1,38 @@
+---
+import Button from '../ui/Button.astro';
+
+const { image, title, accent, actions } = Astro.props;
+---
+
+<section style={`background-image: url(${image.src});`} class="bg-cover bg-[25%_100%] bg-no-repeat relative">
+  <div
+    class="absolute inset-0 h-full bg-white/75 dark:bg-black/75 dark:sm:bg-transparent sm:bg-transparent dark:from-black/80 dark:to-black/15 from-white/80 sm:to-white/15 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+  >
+  </div>
+  <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+      <h1 class="text-3xl font-extrabold sm:text-5xl mb-4 !leading-tight">
+        {title}
+        <strong class="block font-extrabold text-secondary"> {accent}</strong>
+      </h1>
+      <slot class="mt-4 max-w-lg sm:text-xl/relaxed" name="title" />
+      <div class="flex flex-wrap gap-4 text-center">
+        {
+          actions && (
+            <div class="mx-auto sm:mx-0 flex flex-nowrap flex-row sm:justify-center gap-4 mt-6">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <div class="flex w-full sm:w-auto">
+                    <Button {...(action || {})} class="w-full sm:mb-0" />
+                  </div>
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

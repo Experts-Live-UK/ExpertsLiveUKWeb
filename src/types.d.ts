@@ -1,3 +1,4 @@
+import type { imageMetadata } from 'astro/assets/utils';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
@@ -133,7 +134,7 @@ export interface Item {
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
-  image?: Image;
+  image?: Image | imageMetadata;
 }
 
 export interface Price {
