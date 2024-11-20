@@ -35,6 +35,10 @@ export const headerData = {
           href: getPermalink('/about'),
         },
         {
+          text: 'Experts Live global',
+          href: getPermalink('https://www.expertslive.org'),
+        },
+        {
           text: 'Contact',
           href: getPermalink('/contact'),
         },
@@ -84,10 +88,10 @@ export const footerData = {
         //   text: 'Previous events',
         //   href: getPermalink('/usergroup/#previous'),
         // },
-        // {
-        //   text: 'Call for Speakers',
-        //   href: getPermalink('/usergroupspeakers'),
-        // },
+        {
+          text: 'Call for Speakers',
+          href: getPermalink('https://sessionize.com/ExpertsLiveUK/'),
+        },
       ],
     },
     {
