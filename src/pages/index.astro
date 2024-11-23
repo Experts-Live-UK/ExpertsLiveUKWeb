@@ -6,10 +6,14 @@ import Content from '~/components/widgets/Content.astro';
 import FeaturesWithImage from '~/components/widgets/FeaturesWithImage.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import ELMapLogo from '~/assets/images/expertslivemap.webp';
-import AdvaniaLogo from '~/assets/images/advania_uk_logo.jpg';
 import SimonOwen from '~/assets/images/SimonOwen.jpg';
 import ChrisHuntingford from '~/assets/images/ChrisHuntingford.jpg';
-import PerformantaLogo from '~/assets/images/performanta_logo.jpg';
+import MarcusBurnap from '~/assets/images/performanta_logo.jpg';
+import LukeEvans from '~/assets/images/ChrisHuntingford.jpg';
+import SteveGoodman from '~/assets/images/stevegoodman.webp';
+import AmyBoyd from '~/assets/images/amyboyd.webp';
+import TikitLogo from '~/assets/images/advania_uk_logo.jpg';
+import SquaredUpLogo from '~/assets/images/performanta_logo.jpg';
 import { Image } from 'astro:assets';
 import conferenceImage from '~/assets/images/team-members.png';
 import userGroupImage from '~/assets/images/user-group.webp';
@@ -38,13 +42,17 @@ const metadata = {
         href: 'https://www.meetup.com/experts-live-uk/events/304528564',
         target: '_blank',
       },
-      { text: 'Learn more', href: '/usergroup' },
+      { 
+        text: 'Learn more',
+        href: '/usergroup'
+      },
     ]}
   >
     <Fragment slot="title">
       Learn from the experts across cloud, data & AI, business applications, security, and modern workplace. In person user groups
       and working towards a huge UK conference. Suitable for new learners, established consultants and anyone wanting to
       learn more.
+      <p class="font-bold mt-4">Next Event</p>
       <p class="font-bold mt-4">Date: 12th December 2024</p>
       <p class="font-bold">Location: Microsoft Reactor London, UK</p>
     </Fragment>
@@ -83,40 +91,6 @@ const metadata = {
       },
     ]}
   />
-  <Speakers
-    classes={{
-      container: 'py-0 md:py-0 lg:py-0 mt-10',
-    }}
-    id="speakers"
-    speakers={[
-      {
-        name: 'Simon Owen',
-        company: 'Strategist, Governance & Change Enabler at Avanade',
-        topic: 'Building a Centre for Enablement for your Copilot Strategy',
-        image: SimonOwen,
-        time: 'Time: 18:20',
-        items: [
-          {
-            description:
-              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
-          },
-        ],
-      },
-      {
-        name: 'Chris Huntingford',
-        company: 'Director for AI at ANS',
-        topic: 'Unblock AI with Purview',
-        image: ChrisHuntingford,
-        time: 'Time: 19:20',
-        items: [
-          {
-            description:
-              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
-          },
-        ],
-      },
-    ]}
-  />
   <div id="video" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-10">
     <Headline
       title="Welcome Video"
@@ -129,11 +103,63 @@ const metadata = {
     <Fragment slot="content">
       <div class="max-w-xl mx-auto hover:cursor-pointer">
         <div class="flex justify-center">
-          <iframe width="1500" height="480" src="https://www.youtube.com/embed/Rf3zH-cYqOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="853" height="315" src="https://www.youtube.com/embed/Rf3zH-cYqOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
         </div>
       </div>
     </Fragment>
   </div>
+  <Speakers
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    id="speakers"
+    speakers={[
+      {
+        name: 'Simon Owen',
+        company: 'Strategist, Governance & Change Enabler at Avanade',
+        topic: 'Building a Centre for Enablement for your Copilot Strategy',
+        image: SimonOwen,
+        date: '12th December',
+        time: '18:20',
+      },
+      {
+        name: 'Chris Huntingford',
+        company: 'Director for AI at ANS',
+        topic: 'Unblock AI with Purview',
+        image: ChrisHuntingford,
+        date: '12th December',
+        time: 'Time: 19:20',
+      },
+      {
+        name: 'Marcus Burnap,',
+        company: 'Principal Consultant at Performanta',
+        topic: 'Microsoft Security for MSSPs & the Unified Security Operations Platform',
+        image: MarcusBurnap,
+        date: '24th September',
+      },
+      {
+        name: 'Luke Evans',
+        company: 'Solutions Architect at Agilisys',
+        topic: 'Cracking the Code: Live Ethical Hacking and Security Insights into M365 Tenants',
+        image: LukeEvans,
+        date: '24th September',
+      },
+      {
+        name: 'Amy Boyd',
+        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
+        topic: 'Responsible AI',
+        image: AmyBoyd,
+        date: '20th June',
+      },
+      {
+        name: 'Steve Goodman',
+        company: 'Advania, Field Chief Technology Officer',
+        topic: 'AI in the Modern Workplace',
+        image: SteveGoodman,
+        date: '20th June',
+      },
+    ]}
+  />
   <Features2
     id="why"
     title="Why Attend?"
@@ -161,7 +187,7 @@ const metadata = {
   />
   <div id="sponsors" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-14">
     <Headline
-      title="Meet Our Sponsors"
+      title="Meet Our Founding Sponsors"
       classes={{
         container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
         title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
@@ -171,21 +197,18 @@ const metadata = {
     <Fragment slot="content">
       <div class="flex flex-wrap justify-center items-start gap-8 lg:gap-24">
         <!-- Add items-center -->
-        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
-          <Image src={AdvaniaLogo} alt="Sponsor - Advania" class="mx-auto w-20 h-20" />
-          <p class="mt-4 text-center">Advania</p>
-        </div>
-        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
-          <Image src={PerformantaLogo} alt="Sponsor - Advania" class="mx-auto w-20 h-20" />
-          <p class="mt-4 text-center">Performanta</p>
-        </div>
-        <div
-          class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-14 text-center"
-        >
-          <div class="border-2 border-gray-800 dark:border-gray-400 w-20 h-20 mx-auto flex items-center justify-center">
-            <p>This could be you!</p>
+        <a href="https://www.tikit.ai">
+          <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+            <Image src={TikitLogo} alt="Sponsor - Tikit by Cireson" class="mx-auto w-20 h-20" />
+            <p class="mt-4 text-center">Tikit by Cireson</p>
           </div>
-        </div>
+        </a>
+        <a href="https://www.squaredup.com">
+          <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+            <Image src={SquaredUpLogo} alt="Sponsor - SquaredUp" class="mx-auto w-20 h-20" />
+            <p class="mt-4 text-center">SquaredUp</p>
+          </div>
+        </a>
       </div>
     </Fragment>
   </div>
