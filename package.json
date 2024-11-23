@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier -w .",
-    "lint:eslint": "eslint . --ext .js,.ts,.astro"
+    "lint:eslint": "eslint . --ext .js,.ts,.astro",
+    "ci:cleanup-deployments": "ts-node --project scripts/tsconfig.json scripts/pr-cleanup-deployments.ts"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.2",
