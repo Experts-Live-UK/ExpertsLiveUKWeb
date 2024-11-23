@@ -1,0 +1,36 @@
+name: Cleanup static web apps
+on:
+    pull_request:
+      branches:
+        - main
+
+# Add the following variables into devops:
+# - DEVOPS_PAT: your personal access token for DevOps
+# - AZURE_SUBSCRIPTION: the subscription in azure under which your swa lives
+#
+# Note: They should be added as secret, but I couldn't make it work with
+# the AzureCLI@2 task, so you can only add them as normal variable
+env:
+  NPM_CONFIG_CACHE: $(Pipeline.Workspace)/.npm
+  DEVOPS_ORG_URL: "https://dev.azure.com/feedm3"
+  DEVOPS_PROJECT: "azure-playground"
+  AZURE_STATIC_WEBAPP_NAME: "react-app"
+
+jobs:
+    cleanup_preview_environments_job:
+        name: Cleanup
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Setup Node
+              uses: actions/setup-node@v2
+            
+            - name: Install dependencies  
+              run: |
+                npm i
+
+            - name: Install dependencies
+              run: |
+                npm run ci:cleanup-deployments
