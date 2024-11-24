@@ -26,7 +26,8 @@ const { speakers, id } = Astro.props;
           <h4 class="text-2xl font-bold">{speaker.name}</h4>
           <h4 class="text-xs text-gray-700 text-center font-semibold uppercase">{speaker.company}</h4>
           <p class="text-base font-normal">{speaker.topic}</p>
-          <p class="text-base font-normal">{speaker.time}</p>
+          <p class="text-base font-normal">Date: {speaker.date}</p>
+          <p class="text-base font-normal">Time: {speaker.time}</p>
         </div>
       </div>
     ))
