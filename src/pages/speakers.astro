@@ -1,0 +1,94 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/blog/Headline.astro';
+import AmyBoyd from '~/assets/images/speakers/amyboyd.jpg';
+import SteveGoodman from '~/assets/images/speakers/stevegoodman.jpg';
+import LukeEvans from '~/assets/images/speakers/lukeevans.jpg';
+import MarcusBurnap from '~/assets/images/speakers/marcusburnap.jpg';
+import ChrisHuntingford from '~/assets/images/speakers/chrishuntingford.jpg';
+import SimonOwen from '~/assets/images/speakers/simonowen.jpg';
+import Speakers from '~/components/widgets/Speakers.astro';
+
+const metadata = {
+  title: 'Our Speakers',
+};
+---
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Our Speakers"
+  >
+    <Fragment slot="title">
+      Bringing you the best speakers around Microsoft in the UK. <br />
+      <span class="text-accent dark:text-white highlight"></span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We are so greatful for all the speakers who have joined us our our events.
+    </Fragment>
+  </Hero>
+
+  <!-- Sponsors Section ******************* -->
+  <div id="sponsors" class="py-10 scroll-mt-14">
+    <Headline
+      title="Meet Our Speakers"
+      classes={{
+        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      }}
+    />
+
+    <Speakers
+      classes={{
+        container: 'py-0 md:py-0 lg:py-0 mt-10',
+      }}
+      id="speakers"
+      speakers={[
+        {
+          name: 'Amy Boyd',
+          company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
+          topic: 'Responsible AI',
+          image: AmyBoyd,
+          date: '20th June',
+        },
+        {
+          name: 'Steve Goodman',
+          company: 'Advania, Field Chief Technology Officer',
+          topic: 'AI in the Modern Workplace',
+          image: SteveGoodman,
+          date: '20th June',
+        },
+        {
+          name: 'Luke Evans',
+          company: 'Solutions Architect at Agilisys',
+          topic: 'Cracking the Code: Live Ethical Hacking and Security Insights into M365 Tenants',
+          image: LukeEvans,
+          date: '24th September',
+        },
+        {
+          name: 'Marcus Burnap,',
+          company: 'Principal Consultant at Performanta',
+          topic: 'Microsoft Security for MSSPs & the Unified Security Operations Platform',
+          image: MarcusBurnap,
+          date: '24th September',
+        },
+        {
+          name: 'Chris Huntingford',
+          company: 'Director for AI at ANS',
+          topic: 'Unblock AI with Purview',
+          image: ChrisHuntingford,
+          date: '12th December',
+        },
+        {
+          name: 'Simon Owen',
+          company: 'Strategist, Governance & Change Enabler at Avanade',
+          topic: 'Building a Centre for Enablement for your Copilot Strategy',
+          image: SimonOwen,
+          date: '12th December',
+        },
+      ]}
+    />
+  </div>
+</Layout>
+  

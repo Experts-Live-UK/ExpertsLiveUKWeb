@@ -835,6 +835,11 @@ padding-top: 0;
 margin-top: 0;
 }
 
+#sponsors div.rounded-full {
+    height: 20rem;
+    width: 20rem;
+}
+
 /* Praktisch pagina fixes */
 
 .page-id-1760 .speakers_page {
