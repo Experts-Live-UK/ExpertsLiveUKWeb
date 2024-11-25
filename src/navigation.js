@@ -56,25 +56,6 @@ export const headerData = {
         },
       ],
     },
-
-    /*
-    {
-      text: 'Events',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Categories',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tags',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },*/
   ],
   actions: [],
 };
@@ -88,14 +69,6 @@ export const footerData = {
           text: 'About the user group',
           href: getPermalink('/usergroup'),
         },
-        // {
-        //   text: 'Planned events',
-        //   href: getPermalink('/usergroup/#planned'),
-        // },
-        // {
-        //   text: 'Previous events',
-        //   href: getPermalink('/usergroup/#previous'),
-        // },
         {
           text: 'Call for Speakers',
           href: getPermalink('https://sessionize.com/ExpertsLiveUK/'),
