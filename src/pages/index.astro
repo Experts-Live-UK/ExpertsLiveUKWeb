@@ -8,9 +8,9 @@ import ELMapLogo from '~/assets/images/expertslivemap.webp';
 import TikitByCiresonLogo from '~/assets/images/sponsors/tikit_by_cireson_logo.jpg';
 import SquaredUpLogo from '~/assets/images/sponsors/squaredup_logo.jpg';
 import { Image } from 'astro:assets';
-import conferenceImage from '~/assets/images/team-members.png';
-import userGroupImage from '~/assets/images/user-group.webp';
-import expertsLive from '~/assets/images/experts-live.webp';
+import ConferenceImage from '~/assets/images/conference.png';
+import UserGroupImage from '~/assets/images/user-group.jpg';
+import ExpertsLive from '~/assets/images/experts-live.webp';
 import Headline from '~/components/blog/Headline.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -72,13 +72,13 @@ const metadata = {
         title: 'User Group',
         description:
           "A quarterly user group based in London, each meeting is themed around a specific topic. It's an excellent preparation for our upcoming conference next year, providing continuous learning and networking opportunities.",
-        image: { src: userGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
+        image: { src: UserGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
       },
       {
         title: 'Conference',
         description:
           "A UK-based conference that covers the entire spectrum of Microsoft Technologies. We bring together global talent to share the latest updates and knowledge. It's a unique opportunity to learn, network, and get inspired.",
-        image: { src: conferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
+        image: { src: ConferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
       },
     ]}
   />
@@ -150,7 +150,7 @@ const metadata = {
     ]}
     title="Get involved?"
     image={{
-      src: expertsLive.src,
+      src: ExpertsLive.src,
       alt: 'Colorful Image',
     }}
   >

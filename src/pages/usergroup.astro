@@ -4,8 +4,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import user from '~/assets/images/user.webp';
-import userGroupImage from '~/assets/images/user-group.webp';
+import Team from '~/assets/images/team.jpg';
+import UserGroupImage from '~/assets/images/user-group.jpg';
 import Speakers from '~/components/widgets/Speakers.astro';
 import { Image } from 'astro:assets';
 
@@ -28,7 +28,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: userGroupImage,
+      src: UserGroupImage,
       alt: 'Children telling a story. Long-form Sales Landing Page demo',
     }}
   />
@@ -59,7 +59,7 @@ const metadata = {
       },
     ]}
   >
-    <Image src={user} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
+    <Image src={Team} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
   </Steps2>
   <Features2
   id="why"

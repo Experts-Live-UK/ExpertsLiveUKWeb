@@ -4,24 +4,24 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import user from '~/assets/images/user.webp';
+import Team from '~/assets/images/team.jpg';
 import SimonOwen from '~/assets/images/speakers/simonowen.jpg';
 import ChrisHuntingford from '~/assets/images/speakers/chrishuntingford.jpg';
 import TikitByCiresonLogo from '~/assets/images/sponsors/tikit_by_cireson_logo.jpg';
 import SquaredUpLogo from '~/assets/images/sponsors/squaredup_logo.jpg';
 import MSTalentLogo from '~/assets/images/sponsors/ms_talent_logo.jpg';
-import userGroupImage from '~/assets/images/user-group.webp';
+import UserGroupImage from '~/assets/images/user-group.jpg';
 import Speakers from '~/components/widgets/Speakers.astro';
 import { Image } from 'astro:assets';
 import Headline from '~/components/blog/Headline.astro';
 
 const metadata = {
-  title: 'Net user group event',
+  title: 'Next User Group event',
 };
 ---
 <Layout metadata={metadata}>
   <Hero2
-    tagline="Experts Live UK user group"
+    tagline="Experts Live UK User Group"
     title="Next Event"
     subtitle="December 12th 2024 at Microsoft Reactor, London Paddington"
     actions={[
@@ -34,13 +34,13 @@ const metadata = {
       },
     ]}
     image={{
-      src: userGroupImage,
+      src: UserGroupImage,
       alt: 'Children telling a story. Long-form Sales Landing Page demo',
     }}
   />
   <div class="bg-blue-200 dark:bg-slate-900 my-10">
     <CallToAction
-      title="Experts Live UK user group"
+      title="Experts Live UK User Group"
       subtitle="Our next User Group in London on the 12th December 2024, we look forward to welcoming the UK Microsoft Community for our latest event. This event will be focused on Microsoft 365 Copilot and our speakers will be Simon Owen from Avanade and Chris Huntingford from ANS."
     />
   </div>
@@ -145,7 +145,7 @@ const metadata = {
       },
     ]}
   >
-    <Image src={user} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
+    <Image src={Team} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
   </Steps2>
   <Features2
     id="why"
