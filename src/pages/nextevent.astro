@@ -7,10 +7,13 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import user from '~/assets/images/user.webp';
 import SimonOwen from '~/assets/images/SimonOwen.jpg';
 import ChrisHuntingford from '~/assets/images/ChrisHuntingford.jpg';
-import logo from '~/assets/images/SquareLogo.png';
+import TikitByCiresonLogo from '~/assets/images/tikit_by_cireson_logo.jpg';
+import SquaredUpLogo from '~/assets/images/squaredup_logo.jpg';
+import MSTalentLogo from '~/assets/images/sponsors/mstalent.jpg';
 import userGroupImage from '~/assets/images/user-group.webp';
 import Speakers from '~/components/widgets/Speakers.astro';
 import { Image } from 'astro:assets';
+import Headline from '~/components/blog/Headline.astro';
 
 const metadata = {
   title: 'Net user group event',
@@ -88,6 +91,39 @@ const metadata = {
   </ul>
 </div>
 
+<div id="sponsors" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-14">
+  <Headline
+    title="Event Sponsors"
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+    }}
+  />
+  <Fragment slot="content">
+    <div class="flex flex-wrap justify-center items-start gap-8 lg:gap-24">
+      <!-- Add items-center -->
+      <a href="https://www.tikit.ai">
+        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+          <Image src={TikitByCiresonLogo} alt="Sponsor - Tikit by Cireson" class="mx-auto w-32 h-32" />
+          <p class="mt-4 text-center">Tikit by Cireson</p>
+        </div>
+      </a>
+      <a href="https://www.squaredup.com">
+        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+          <Image src={SquaredUpLogo} alt="Sponsor - SquaredUp" class="mx-auto w-32 h-32" />
+          <p class="mt-4 text-center">SquaredUp</p>
+        </div>
+      </a>
+      <a href="https://www.ms-talent.com">
+        <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
+          <Image src={MSTalentLogo} alt="Sponsor - MS Talent" class="mx-auto w-32 h-32" />
+          <p class="mt-4 text-center">MS Talent</p>
+        </div>
+      </a>
+    </div>
+  </Fragment>
+</div>
 
   <Steps2
     title="Our values"
