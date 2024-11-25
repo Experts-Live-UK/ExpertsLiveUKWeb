@@ -3,25 +3,33 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
+      text: 'Home',
+      href: getPermalink('/'),
+    },
+    {
       text: 'User Group',
       links: [
         {
           text: 'About the user group',
           href: getPermalink('/usergroup'),
         },
-        // {
-        //   text: 'Planned events',
-        //   href: getPermalink('/usergroup/#planned'),
-        // },
-        // {
-        //   text: 'Previous events',
-        //   href: getPermalink('/usergroup/#previous'),
-        // },
+        {
+          text: 'Next event',
+          href: getPermalink('/nextevent'),
+        },
+        {
+          text: 'Scheduled events',
+          href: getPermalink('/usergroup/#scheduledevents'),
+        },
       ],
     },
     {
       text: 'Conference',
       href: getPermalink('/conference'),
+    },
+    {
+      text: 'Speakers',
+      href: getPermalink('/speakers'),
     },
     {
       text: 'Sponsors',

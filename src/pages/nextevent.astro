@@ -1,0 +1,152 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import user from '~/assets/images/user.webp';
+import SimonOwen from '~/assets/images/SimonOwen.jpg';
+import ChrisHuntingford from '~/assets/images/ChrisHuntingford.jpg';
+import logo from '~/assets/images/SquareLogo.png';
+import userGroupImage from '~/assets/images/user-group.webp';
+import Speakers from '~/components/widgets/Speakers.astro';
+import { Image } from 'astro:assets';
+
+const metadata = {
+  title: 'Net user group event',
+};
+---
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Experts Live UK user group"
+    title="Next Event"
+    subtitle="December 12th 2024 at Microsoft Reactor, London Paddington"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register for next User Group',
+        href: 'https://www.meetup.com/experts-live-uk/events/304528564',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+    image={{
+      src: userGroupImage,
+      alt: 'Children telling a story. Long-form Sales Landing Page demo',
+    }}
+  />
+  <div class="bg-blue-200 dark:bg-slate-900 my-10">
+    <CallToAction
+      title="Experts Live UK user group"
+      subtitle="Our next User Group in London on the 12th December 2024, we look forward to welcoming the UK Microsoft Community for our latest event. This event will be focused on Microsoft 365 Copilot and our speakers will be Simon Owen from Avanade and Chris Huntingford from ANS."
+    />
+  </div>
+  <Speakers
+    classes={{
+      container: 'py-0 md:py-0 lg:py-0 mt-10',
+    }}
+    id="speakers"
+    speakers={[
+      {
+        name: 'Simon Owen',
+        company: 'Strategist, Governance & Change Enabler at Avanade',
+        topic: 'Building a Centre for Enablement for your Copilot Strategy',
+        image: SimonOwen,
+        time: 'Time: 18:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
+      },
+      {
+        name: 'Chris Huntingford',
+        company: 'Director for AI at ANS',
+        topic: 'Unblock AI with Purview',
+        image: ChrisHuntingford,
+        time: 'Time: 19:20',
+        items: [
+          {
+            description:
+              'Introducing your Experts Live UK team who will share what they think matters in the world of AI, especially with Copilot.',
+          },
+        ],
+      },
+    ]}
+  />
+
+<div class="session text-center font-bold text-lg">
+  <h2 class="session-title text-3xl">Agenda</h2>
+  <ul class="session-speaker">
+    <li><strong>17:00 - </strong> Copilot Studio hands-on workshop with Kevin McDonnell</li>
+    <li><strong>18:00 - </strong> Networking and welcome </li>
+    <li><strong>18:20 - </strong> Building a Centre for Enablement for your Copilot Strategy with Simon Owen </li>
+    <li><strong>19:00 - </strong> Pizza and networking </li>
+    <li><strong>19:20 - </strong> Unblock AI with Purview with Chris Huntingford </li>
+    <li><strong>20:15 - </strong> Post UG networking drinks at The Union </li>
+  </ul>
+</div>
+
+
+  <Steps2
+    title="Our values"
+    subtitle="What we hope to achieve."
+    items={[
+      {
+        title: 'Our mission',
+        description:
+          'Our mission is to ignite a spark of curiosity and the desire to learn, share, and innovate. Whether you’re looking to deepen your expertise, stay ahead of the curve with the latest trends, or simply connect with fellow visionaries, Experts Live UK is your gateway to the future.',
+      },
+      {
+        title: 'Across Microsoft',
+        description:
+          'As a beacon for those passionate about the vast universe of Microsoft technologies, Experts Live UK offers an unparalleled breadth of coverage. From the core infrastructure of Azure and the productivity suite of Microsoft 365, to the cutting-edge realms of AI and Power Platform, our sessions are curated to provide insights across the entire Microsoft ecosystem.',
+      },
+      {
+        title: 'Together',
+        description: 'Let’s explore the possibilities, push boundaries, and redefine what’s achievable together.',
+      },
+    ]}
+  >
+    <Image src={user} alt="Experts Live UK" class="w-full rounded-md" slot="image" />
+  </Steps2>
+  <Features2
+    id="why"
+    title="Why Attend?"
+    columns={3}
+    items={[
+      {
+        title: 'Learn',
+        description:
+          "Learn from the experts across modern work, platform, security, and more. Dive deep into the world of Microsoft technologies with insights and knowledge shared by industry-leading experts. Whether you're interested in AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid.",
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Network',
+        description:
+          'Network with peers and Microsoft staff to forge valuable connections, exchange ideas, and collaborate on innovative solutions. Connect with like-minded professionals who share your passion for Microsoft technologies and join a vibrant community dedicated to driving innovation and excellence',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Experience',
+        description:
+          'Experience the latest Microsoft technologies firsthand through interactive sessions, demos, and hands-on workshops. Immerse yourself in the cutting-edge tools and solutions that are shaping the future of modern work, platform development, security practices, and beyond',
+        icon: 'tabler:template',
+      },
+    ]}
+  />
+  <CallToAction
+    title="Experts Live UK user group"
+    subtitle="Our next User Group in London on the 12th December 2024, we look forward to welcoming the UK Microsoft Community for our latest event. This event will be focused on Microsoft 365 Copilot and our speakers will be Simon Owen from Avanade and Chris Huntingford from ANS."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register for next User Group',
+        href: 'https://www.meetup.com/experts-live-uk/events/304528564',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>
