@@ -4,24 +4,15 @@ import HeroFullImage from '~/components/widgets/HeroFullImage.astro';
 import NavigationBar from '~/components/widgets/NavigationBar.astro';
 import Content from '~/components/widgets/Content.astro';
 import FeaturesWithImage from '~/components/widgets/FeaturesWithImage.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import ELMapLogo from '~/assets/images/expertslivemap.webp';
-import SimonOwen from '~/assets/images/SimonOwen.jpg';
-import ChrisHuntingford from '~/assets/images/ChrisHuntingford.jpg';
-import MarcusBurnap from '~/assets/images/performanta_logo.jpg';
-import LukeEvans from '~/assets/images/ChrisHuntingford.jpg';
-import SteveGoodman from '~/assets/images/stevegoodman.webp';
-import AmyBoyd from '~/assets/images/amyboyd.webp';
-import TikitLogo from '~/assets/images/advania_uk_logo.jpg';
-import SquaredUpLogo from '~/assets/images/performanta_logo.jpg';
+import TikitByCiresonLogo from '~/assets/images/sponsors/tikit_by_cireson_logo.jpg';
+import SquaredUpLogo from '~/assets/images/sponsors/squaredup_logo.jpg';
 import { Image } from 'astro:assets';
-import conferenceImage from '~/assets/images/team-members.png';
-import userGroupImage from '~/assets/images/user-group.webp';
-import expertsLive from '~/assets/images/experts-live.webp';
+import ConferenceImage from '~/assets/images/conference.jpg';
+import UserGroupImage from '~/assets/images/user-group.jpg';
+import ExpertsLive from '~/assets/images/experts-live.webp';
 import Headline from '~/components/blog/Headline.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Speakers from '~/components/widgets/Speakers.astro';
-import SiteLogo from '~/assets/images/video-poster.webp';
 
 const metadata = {
   title: 'Experts Live UK',
@@ -44,7 +35,7 @@ const metadata = {
       },
       { 
         text: 'Learn more',
-        href: '/usergroup'
+        href: '/nextevent'
       },
     ]}
   >
@@ -52,7 +43,7 @@ const metadata = {
       Learn from the experts across cloud, data & AI, business applications, security, and modern workplace. In person user groups
       and working towards a huge UK conference. Suitable for new learners, established consultants and anyone wanting to
       learn more.
-      <p class="font-bold mt-4">Next Event</p>
+      <h1 class="text-secondary dark:text-gray-200 font-bold font-heading leading-tighter mb-4 md:text-5xl text-5xl tracking-tighter">Next Event</h1>
       <p class="font-bold mt-4">Date: 12th December 2024</p>
       <p class="font-bold">Location: Microsoft Reactor London, UK</p>
     </Fragment>
@@ -81,13 +72,13 @@ const metadata = {
         title: 'User Group',
         description:
           "A quarterly user group based in London, each meeting is themed around a specific topic. It's an excellent preparation for our upcoming conference next year, providing continuous learning and networking opportunities.",
-        image: { src: userGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
+        image: { src: UserGroupImage, alt: 'User Group Image', width: '476px', height: '317px' },
       },
       {
         title: 'Conference',
         description:
           "A UK-based conference that covers the entire spectrum of Microsoft Technologies. We bring together global talent to share the latest updates and knowledge. It's a unique opportunity to learn, network, and get inspired.",
-        image: { src: conferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
+        image: { src: ConferenceImage, alt: 'Conference Image', width: '476px', height: '317px' },
       },
     ]}
   />
@@ -108,83 +99,6 @@ const metadata = {
       </div>
     </Fragment>
   </div>
-  <Speakers
-    classes={{
-      container: 'py-0 md:py-0 lg:py-0 mt-10',
-    }}
-    id="speakers"
-    speakers={[
-      {
-        name: 'Simon Owen',
-        company: 'Strategist, Governance & Change Enabler at Avanade',
-        topic: 'Building a Centre for Enablement for your Copilot Strategy',
-        image: SimonOwen,
-        date: '12th December',
-        time: '18:20',
-      },
-      {
-        name: 'Chris Huntingford',
-        company: 'Director for AI at ANS',
-        topic: 'Unblock AI with Purview',
-        image: ChrisHuntingford,
-        date: '12th December',
-        time: 'Time: 19:20',
-      },
-      {
-        name: 'Marcus Burnap,',
-        company: 'Principal Consultant at Performanta',
-        topic: 'Microsoft Security for MSSPs & the Unified Security Operations Platform',
-        image: MarcusBurnap,
-        date: '24th September',
-      },
-      {
-        name: 'Luke Evans',
-        company: 'Solutions Architect at Agilisys',
-        topic: 'Cracking the Code: Live Ethical Hacking and Security Insights into M365 Tenants',
-        image: LukeEvans,
-        date: '24th September',
-      },
-      {
-        name: 'Amy Boyd',
-        company: 'Principal Cloud Advocate, AI Advocacy Lead at Microsoft',
-        topic: 'Responsible AI',
-        image: AmyBoyd,
-        date: '20th June',
-      },
-      {
-        name: 'Steve Goodman',
-        company: 'Advania, Field Chief Technology Officer',
-        topic: 'AI in the Modern Workplace',
-        image: SteveGoodman,
-        date: '20th June',
-      },
-    ]}
-  />
-  <Features2
-    id="why"
-    title="Why Attend?"
-    columns={3}
-    items={[
-      {
-        title: 'Learn',
-        description:
-          "Learn from the experts across modern work, platform, security, and more. Dive deep into the world of Microsoft technologies with insights and knowledge shared by industry-leading experts. Whether you're interested in AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid.",
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Network',
-        description:
-          'Network with peers and Microsoft staff to forge valuable connections, exchange ideas, and collaborate on innovative solutions. Connect with like-minded professionals who share your passion for Microsoft technologies and join a vibrant community dedicated to driving innovation and excellence',
-        icon: 'tabler:network',
-      },
-      {
-        title: 'Experience',
-        description:
-          'Experience the latest Microsoft technologies firsthand through interactive sessions, demos, and hands-on workshops. Immerse yourself in the cutting-edge tools and solutions that are shaping the future of modern work, platform development, security practices, and beyond',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
   <div id="sponsors" class="bg-blue-200 dark:bg-slate-900 py-10 scroll-mt-14">
     <Headline
       title="Meet Our Founding Sponsors"
@@ -199,13 +113,13 @@ const metadata = {
         <!-- Add items-center -->
         <a href="https://www.tikit.ai">
           <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
-            <Image src={TikitLogo} alt="Sponsor - Tikit by Cireson" class="mx-auto w-20 h-20" />
+            <Image src={TikitByCiresonLogo} alt="Sponsor - Tikit by Cireson" class="mx-auto w-32 h-32" />
             <p class="mt-4 text-center">Tikit by Cireson</p>
           </div>
         </a>
         <a href="https://www.squaredup.com">
           <div class="flex justify-center flex-col items-center rounded-full bg-white dark:bg-neutral-900 p-8 px-14">
-            <Image src={SquaredUpLogo} alt="Sponsor - SquaredUp" class="mx-auto w-20 h-20" />
+            <Image src={SquaredUpLogo} alt="Sponsor - SquaredUp" class="mx-auto w-32 h-32" />
             <p class="mt-4 text-center">SquaredUp</p>
           </div>
         </a>
@@ -213,29 +127,29 @@ const metadata = {
     </Fragment>
   </div>
   <Content
-    id="what"
+    id="getinvolved"
     isReversed
     tagline="sharing Microsoft technologies worldwide"
     items={[
       {
-        title: 'Who',
+        title: 'Attend',
         description:
           'A non-profit organization based in the United Kingdom that has a mission to “enable sharing of knowledge and experience about Microsoft technologies worldwide”',
       },
       {
-        title: 'What',
+        title: 'Speak',
         description:
           'Speakers from different areas such as AI, Azure, Microsoft 365, Business Applications, Data Platform, Security, Hybrid and many others.',
       },
       {
-        title: 'Inspiration',
+        title: 'Sponsor',
         description:
           'Inspired by Experts Live events globally, we are focusing on Microsoft ecosystem to increase the diversity in the Community',
       },
     ]}
-    title="What is involved?"
+    title="Get involved?"
     image={{
-      src: expertsLive.src,
+      src: ExpertsLive.src,
       alt: 'Colorful Image',
     }}
   >
