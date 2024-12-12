@@ -44,7 +44,7 @@ export const headerData = {
         },
         {
           text: 'Experts Live global',
-          href: getPermalink('https://www.expertslive.org'),
+          href: 'https://www.expertslive.org',
         },
         {
           text: 'Contact',
@@ -71,7 +71,7 @@ export const footerData = {
         },
         {
           text: 'Call for Speakers',
-          href: getPermalink('https://sessionize.com/ExpertsLiveUK/'),
+          href: 'https://sessionize.com/ExpertsLiveUK/',
         },
       ],
     },
@@ -116,9 +116,8 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/ExpertsLiveUK' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com' },
-    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/expertliveuk' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/ExpertsLiveUK', target: "_blank" },
+    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/ExpertsLiveUK' },
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 rounded-sm"></span>
